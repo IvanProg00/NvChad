@@ -44,6 +44,7 @@ return {
         "javascript",
         "python",
         "html",
+        "markdown",
       },
       rainbow = {
         enable = true,

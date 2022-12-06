@@ -15,10 +15,16 @@ end
 local sources = {
   -- Go
   goimports,
-  null_ls.builtins.diagnostics.golangci_lint,
+  b.diagnostics.golangci_lint,
 
   -- Lua
   b.formatting.stylua,
+
+  -- Web
+  b.formatting.prettier,
+
+  -- Shell
+  b.formatting.shfmt,
 }
 
 null_ls.setup {
