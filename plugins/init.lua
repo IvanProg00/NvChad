@@ -27,6 +27,7 @@ return {
         "golangci-lint-langserver",
         "gopls",
         "typescript-language-server",
+        "shfmt",
       },
     },
   },
@@ -130,6 +131,9 @@ return {
     config = function()
       require("go").setup {
         run_in_floaterm = true,
+        lsp_inlay_hints = {
+          enable = true,
+        },
       }
     end,
   },
@@ -169,6 +173,18 @@ return {
     tag = "*",
     config = function()
       require "custom.plugins.configs.toggleterm"
+    end,
+  },
+  ["mfussenegger/nvim-dap"] = {},
+  ["rcarriga/nvim-dap-ui"] = {
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      require("dapui").setup()
+    end,
+  },
+  ["theHamsta/nvim-dap-virtual-text"] = {
+    config = function()
+      require("nvim-dap-virtual-text").setup()
     end,
   },
 }
