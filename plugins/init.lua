@@ -21,13 +21,21 @@ return {
         "gitlint",
         "prettier",
         "lua-language-server",
+        "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
+        "emmet-ls",
+        "json-lsp",
         "stylua",
         "yaml-language-server",
         "pylint",
         "golangci-lint-langserver",
+        "terraform-ls",
+        "dockerfile-language-server",
         "gopls",
         "typescript-language-server",
         "shfmt",
+        "markdownlint",
       },
     },
   },
@@ -56,6 +64,7 @@ return {
   },
 
   -- UI
+  ["goolord/alpha-nvim"] = { disable = false },
   ["folke/which-key.nvim"] = {
     disable = false,
     override_options = function()
@@ -101,13 +110,13 @@ return {
       require "custom.plugins.configs.illuminate"
     end,
   },
-  ["karb94/neoscroll.nvim"] = {
-    opt = true,
-    event = "BufReadPost",
-    config = function()
-      require "custom.plugins.configs.neoscroll"
-    end,
-  },
+  -- ["karb94/neoscroll.nvim"] = {
+  --   opt = true,
+  --   event = "BufReadPost",
+  --   config = function()
+  --     require "custom.plugins.configs.neoscroll"
+  --   end,
+  -- }
   ["folke/todo-comments.nvim"] = {
     config = function()
       require("todo-comments").setup {}
@@ -149,6 +158,8 @@ return {
       }
     end,
   },
+  ["hashivim/vim-terraform"] = {},
+
   ["kyazdani42/nvim-tree.lua"] = {
     override_options = {
       git = {

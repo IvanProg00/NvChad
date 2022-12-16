@@ -6,25 +6,25 @@ end
 
 local b = null_ls.builtins
 
-local goimports = b.formatting.goimports
-local e = os.getenv "GOIMPORTS_LOCAL"
-if e ~= nil then
-  goimports = goimports.with { extra_args = { "-local", e } }
-end
-
 local sources = {
-  -- Go
-  goimports,
   b.diagnostics.golangci_lint,
 
-  -- Lua
+  b.formatting.goimports,
   b.formatting.stylua,
+  b.formatting.prettier.with {
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "css",
+      "markdown",
+    },
+  },
 
-  -- Web
-  b.formatting.prettier,
-
-  -- Shell
   b.formatting.shfmt,
+  b.diagnostics.markdownlint,
 }
 
 null_ls.setup {
