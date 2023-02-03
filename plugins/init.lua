@@ -33,6 +33,8 @@ return {
         "terraform-ls",
         "dockerfile-language-server",
         "gopls",
+        "gofumpt",
+        "goimports",
         "typescript-language-server",
         "shfmt",
         "markdownlint",
@@ -54,6 +56,7 @@ return {
         "python",
         "html",
         "markdown",
+        "fish",
       },
       rainbow = {
         enable = true,

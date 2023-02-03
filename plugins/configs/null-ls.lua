@@ -25,6 +25,7 @@ local sources = {
 
   b.formatting.shfmt,
   b.diagnostics.markdownlint,
+  b.formatting.gofumpt,
 }
 
 null_ls.setup {
